@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction System</h1>
+        <form action="/predict" method="post">
+            <input name="Pregnancies" type="number" placeholder="Pregnancies" required>
+            <input name="Glucose" type="number" placeholder="Glucose" required>
+            <input name="BloodPressure" type="number" placeholder="Blood Pressure" required>
+            <input name="SkinThickness" type="number" placeholder="Skin Thickness" required>
+            <input name="Insulin" type="number" placeholder="Insulin" required>
+            <input name="BMI" type="number" step="0.1" placeholder="BMI" required>
+            <input name="DiabetesPedigreeFunction" type="number" step="0.001" placeholder="Diabetes Pedigree Function" required>
+            <input name="Age" type="number" placeholder="Age" required>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result">
+            {% if result %}
+                <h2>{{ result }}</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
